@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <td class="centrarBoton">
-                            <a href="RegistrarCliente.jsp" id="lnkRegistrarUsuario"><h4>Registrate aqui</h4></a>
+                            <a href="RegistrarUsuario.jsp" id="lnkRegistrarUsuario"><h4>Registrate aqui</h4></a>
                         </td>
                     </tr>
                 </table>

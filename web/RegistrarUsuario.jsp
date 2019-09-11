@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Bienvenido Registrar Usuario</title>
         <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="js/RegistrarCliente.js"></script>
         <link type="text/css" rel="stylesheet" href="css/css1.css" />
@@ -82,17 +82,7 @@
                     </td>
                 </tr>
                 
-                <tr>
-                    <td class="primeraColumna">
-                        Departamento : 
-                    </td>
-                    <td>
-                        <dd> <input type="text" name="txtDepartamento" id="txtDepartamento" class="textBox" placeholder="Departamento" size="30" maxlength="20"> </dd>
-                    </td>
-                    <td>
-                        <dd> * </dd>
-                    </td>
-                </tr>
+              
                 <tr>
                     <td class="primeraColumna">
                         Edad : 
