@@ -40,8 +40,8 @@ public class InsumoDAO implements CRUD{
             rs = ps.executeQuery();
             while(rs.next()){
                 Insumo lINSUMO = new Insumo();
-                lINSUMO.setNombreinsumo(rs.getString("nombre"));
-                lINSUMO.setColorinsumo(rs.getString("color"));
+                lINSUMO.setNombreinsumo(rs.getString("nombreinsumo"));
+                lINSUMO.setColorinsumo(rs.getString("colorinsumo"));
                 listaInsumos.add(lINSUMO);
             }
         } catch (SQLException ex) {
@@ -53,17 +53,17 @@ public class InsumoDAO implements CRUD{
 
     @Override
     public boolean agregar(Insumo INSUMO) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public boolean editar(Insumo INSUMO) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
      
      
