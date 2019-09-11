@@ -19,7 +19,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String ced, String nom, String Dir,String Email, String Telf,String Edad, String Fecha, String Estado, String Usuario, String Password) {
+    public Persona(String ced, String nom, String Dir,String Email, String Telf, String Edad, String Fecha, String Estado, String Usuario, String Password) {
         this.ced = ced;
         this.nom = nom;
         this.Dir = Dir;

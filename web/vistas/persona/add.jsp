@@ -21,7 +21,7 @@
                     Email: <br>
                     <input class="form-control" type="text" name="txtEmail"><br>
                     Telefono: <br>
-                    <input class="form-control" type="text" name="txtTelef"><br>
+                    <input class="form-control" type="text" name="txtTelf"><br>
                     Edad: <br>
                     <input class="form-control" type="text" name="txtEdad"><br>
                     Fecha: <br>
@@ -29,9 +29,9 @@
                     Estado: <br>
                     <input class="form-control" type="text" name="txtEstado"><br>
                     Usuario: <br>
-                    <input class="form-control" type="text" name="txtUsu"><br>
+                    <input class="form-control" type="text" name="txtUsuario"><br>
                     Password: <br>
-                    <input class="form-control" type="text" name="txtPas"><br>
+                    <input class="form-control" type="text" name="txtPassword"><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
                     <a href="Controlador?accion=listar">Regresar</a>
                 </form>
