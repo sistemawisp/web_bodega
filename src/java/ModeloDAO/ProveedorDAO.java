@@ -8,7 +8,7 @@ package ModeloDAO;
 import Interface.CRUDPROVEE;
 import Modelo.Insumo;
 import Modelo.Proveedor;
-import config.conexion;
+import Conexion.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,11 +21,11 @@ import java.util.List;
  */
 public class ProveedorDAO implements CRUDPROVEE {
 
-    conexion cn = new conexion();
+    Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    
+
     @Override
     public List listarProveedores() {
 
@@ -39,12 +39,12 @@ public class ProveedorDAO implements CRUDPROVEE {
                 + "tblproveedor.DatoAdicionalProveedor\n"
                 + "FROM\n"
                 + "tblproveedor";
-        
+
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(consultaSQL);
             rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Proveedor PROVEEDOR = new Proveedor();
                 PROVEEDOR.setCodigoProveedor(rs.getInt("tblproveedor.CodigoProveedor"));
                 PROVEEDOR.setNombreProveedor(rs.getString("NombreProveedor"));
@@ -52,13 +52,12 @@ public class ProveedorDAO implements CRUDPROVEE {
                 PROVEEDOR.setRucProveedor(rs.getString("RucProveedor"));
                 PROVEEDOR.setObservacionProveedor(rs.getString("ObservacionProveedor"));
                 PROVEEDOR.setDatoAdicionalProveedor(rs.getString("DatoAdicionalProveedor"));
-                
-              //  System.err.println("NOMBRE PROVEEDOR"+PROVEEDOR.getNombreProveedor());
-                
+
+                //  System.err.println("NOMBRE PROVEEDOR"+PROVEEDOR.getNombreProveedor());
                 list.add(PROVEEDOR);
             }
         } catch (Exception e) {
-            System.err.println(""+e);
+            System.err.println("" + e);
         }
         return list;
     }
@@ -70,7 +69,27 @@ public class ProveedorDAO implements CRUDPROVEE {
 
     @Override
     public boolean agregar(Proveedor provee) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String cadenaSQL = "SELECT\n"
+                + "tblproveedor.NombreProveedor,\n"
+                + "tblproveedor.InstitucionProveedor,\n"
+                + "tblproveedor.RucProveedor,\n"
+                + "tblproveedor.ObservacionProveedor,\n"
+                + "tblproveedor.DatoAdicionalProveedor)\n"
+                + "VALUES\n"
+                + "('" + provee.getNombreProveedor() + "',"
+                + "('" + provee.getInstitucionProveedor() + "',"
+                + "('" + provee.getRucProveedor() + "',"
+                + "('" + provee.getObservacionProveedor() + "',"
+                + "('" + provee.getDatoAdicionalProveedor() + "'"
+                + ")";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(cadenaSQL);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("" + e);
+        }
+        return false;
     }
 
     @Override

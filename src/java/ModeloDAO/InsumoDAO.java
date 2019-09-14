@@ -5,6 +5,7 @@
  */
 package ModeloDAO;
 
+import Conexion.Conexion;
 import Interface.CRUD;
 import Interface.CRUDINSUMO;
 import Modelo.Insumo;
@@ -24,7 +25,7 @@ import javax.swing.JOptionPane;
  */
 public class InsumoDAO implements CRUDINSUMO {
 
-    conexion cn = new conexion();
+    Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
